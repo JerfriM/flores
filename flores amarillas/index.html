@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores Amarillas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(135deg, #fffbea, #fef7e0);
+            text-align: center;
+            color: #5a420e;
+            animation: fadeIn 2s ease-in;
+            padding: 10px;
+        }
+        h1 {
+            color: #e6b800;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        .flower-container {
+            position: relative;
+            margin: 20px auto;
+            border: 5px solid #e6b800;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 90%;
+            max-width: 400px;
+            animation: popIn 1.5s ease-out;
+            z-index: 5;
+        }
+        .flower-image img {
+            width: 100%;
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes petalsFall {
+            0% { transform: translateY(-10vh) rotate(0); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        .petal {
+    position: fixed;
+    background: #e6b800;
+    border-radius: 50% 50% 0 0;
+    width: 10px;
+    height: 15px;
+    animation: petalsFall 5s linear infinite;
+    z-index: 20; /* Asegura que estén por encima de todo */
+}
+
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+            .petal {
+                width: 7px;
+                height: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🌻 Te mando flores amarillas 🌻</h1>
+    <p>Porque significan felicidad y buenos deseos 💛</p>
+    <div class="flower-container">
+        <div class="flower-image">
+            <img src="https://media0.giphy.com/media/xUA7b2sadnAURwsFk4/giphy.webp?cid=ecf05e471lxn0t1bq1uqfh54uuno9gxx7mxet8nmzsfj7xb7&ep=v1_gifs_search&rid=giphy.webp&ct=g" alt="Flores Amarillas">
+        </div>
+    </div>
+    <script>
+        function createPetals() {
+            const container = document.querySelector('.flower-container');
+            const numPetals = 20;
+            for (let i = 0; i < numPetals; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                petal.style.animationDelay = (Math.random() * 2) + 's';
+                container.appendChild(petal);
+            }
+        }
+        createPetals();
+    </script>
+</body>
+</html>

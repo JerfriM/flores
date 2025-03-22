@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fff8dc;
+    color: #d4a017;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+img {
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #ffd700;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ffcc00;
+}
+
+.hidden {
+    display: none;
+}
+
+#mensaje {
+    font-size: 1.5em;
+    color: #ff9900;
+    margin-top: 20px;
+}
+@keyframes petalsFall {
+    0% { transform: translateY(-10vh) rotate(0); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.petal {
+    position: fixed;
+    background: #e6b800;
+    border-radius: 50% 50% 0 0;
+    width: 10px;
+    height: 15px;
+    animation: petalsFall 5s linear infinite;
+    z-index: 20;
+}
